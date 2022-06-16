@@ -113,7 +113,7 @@ The `evaluator.js` contains the main component that evaluates an expression's AS
 In this assignment, we ask you to improve the this implementation and adding some new functionality.
 
 * This implementation is poorly done and we could use your help. The code in this assignment can ben improved in various ways. Please review the code and improve where you think it is necessary. Also consider extending the unit tests. We value not just functional improvements, but also the non-functional aspects such as quality, readability and extensibility. We expect you to return the assignment on a level that you consider "production-ready".
-* Implement new functionality. Support evaluating the following expression: `contains(fetchGet("https://google.com"), "Bing")`.
+* Implement new functionality. Support evaluating the following expression: `contains(fetchGet("https://google.com"), "Bing")`. Please note that we don't expect you to parse this string into an AST, but support evaluating it. (You can use its AST below)
   * A function called `fetchGet` which can retrieve the contents of a given URL with a GET call and return as string. 
   * A function called `contains` that accepts two string arguments and returns if the first argument contains the second argument.
   * After implementing the functions, the evaluator should able to evaluate the following AST:
