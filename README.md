@@ -116,7 +116,30 @@ In this assignment, we ask you to improve the this implementation and adding som
 * Implement new functionality. Support evaluating the following expression: `contains(fetchGet("https://google.com"), "Bing")`.
   * A function called `fetchGet` which can retrieve the contents of a given URL with a GET call and return as string. 
   * A function called `contains` that accepts two string arguments and returns if the first argument contains the second argument.
-
+  * After implementing the functions, the evaluator should able to evaluate the following AST:
+```javascript
+// contains(fetchGet("https://google.com"), "Bing")
+{
+  "type": "function",
+  "name": "contains",
+  "parameters": [
+    {
+      "type": "function",
+      "name": "fetchGet",
+      "parameters": [
+        {
+          "type": "literal",
+          "value": "https://google.com"
+        }
+      ]
+    },
+    {
+      "type": "literal",
+      "value": "Bing"
+    }
+  ]
+}
+```
 
 You can create a new bundle with `git bundle create assignment.bundle --all` command after you're done with the assignment. (Don't forget to commit your work first) and send it back.
 
