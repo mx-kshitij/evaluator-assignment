@@ -11,35 +11,34 @@ export class Evaluator {
         } else {
           switch (expression.name) {
             case 'add':
-                param1 = await this.evaluate(expression.parameters[0]);
-                param2 = await this.evaluate(expression.parameters[1]);
-                resolve(add(param1, param2));
-                break;
+              param1 = await this.evaluate(expression.parameters[0])
+              param2 = await this.evaluate(expression.parameters[1])
+              resolve(add(param1, param2))
+              break
             case 'equals':
-                param1 = await this.evaluate(expression.parameters[0]);
-                param2 = await this.evaluate(expression.parameters[1]);
-                resolve(equals(param1, param2));
-                break;
+              param1 = await this.evaluate(expression.parameters[0])
+              param2 = await this.evaluate(expression.parameters[1])
+              resolve(equals(param1, param2))
+              break
             case 'not':
-                resolve(not(expression.parameters[0]));
-                break;
+              resolve(not(expression.parameters[0]))
+              break
             case 'fetchGet':
-                param1 = await this.evaluate(expression.parameters[0]);
-                resolve(await fetchGet(param1));
-                break;
+              param1 = await this.evaluate(expression.parameters[0])
+              resolve(await fetchGet(param1))
+              break
             case 'contains':
-                param1 = await this.evaluate(expression.parameters[0]);
-                param2 = await this.evaluate(expression.parameters[1]);
-                resolve(contains(param1, param2));
-                break;
+              param1 = await this.evaluate(expression.parameters[0])
+              param2 = await this.evaluate(expression.parameters[1])
+              resolve(contains(param1, param2))
+              break
             default:
-              reject(new Error('Unknown function'));
-              break;
+              reject(new Error('Unknown function'))
+              break
           }
         }
-      }
-      catch(e){
-        reject(e);
+      } catch (e) {
+        reject(e)
       }
     })
   }

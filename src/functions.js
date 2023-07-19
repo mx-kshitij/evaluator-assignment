@@ -13,7 +13,7 @@ export function not() {
 export function add(...params) {
   var big1 = new Big(params[0])
   var big2 = new Big(params[1])
-  return big1.add(big2).toNumber();
+  return big1.add(big2).toNumber()
 }
 
 export function contains(...params) {
@@ -21,15 +21,15 @@ export function contains(...params) {
 }
 
 export async function fetchGet(url) {
-    var requestOptions = {
-      method: 'GET',
-      redirect: 'follow',
-    }
-    try {
-      let response = await fetch(url, requestOptions);
-      return(await response.text());
-    } catch (e) {
-      console.error(e);
-      return null;
-    }
+  var requestOptions = {
+    method: 'GET',
+    redirect: 'follow',
+  }
+  try {
+    let response = await fetch(url, requestOptions)
+    return await response.text()
+  } catch (e) {
+    console.error(e)
+    return null
+  }
 }
