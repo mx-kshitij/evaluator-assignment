@@ -13,5 +13,9 @@
     "babel-core": "^6.26.3",
     "babel-jest": "^27.0.2",
     "jest": "^27.0.4"
+  },
+  "dependencies": {
+    "big.js": "^6.2.1",
+    "node-fetch": "^2.6.12"
   }
 }
